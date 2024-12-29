@@ -1,0 +1,216 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rohit Kumar Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url(image.jpeg);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .menu-items {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .menu-items li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .menu-items li a:hover {
+            color: #ffc3a0;
+        }
+
+        .showcase-area {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(
+                    rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)
+                ),
+                url("https://source.unsplash.com/1600x900/?restaurant,food");
+            background-size: cover;
+        }
+
+        .showcase-area h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .showcase-area p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.7rem 2rem;
+            background: #ffafbd;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffc3a0;
+        }
+
+        #about {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: white;
+        }
+
+        #about h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        #about p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        #food-menu {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: #f8f8f8;
+        }
+
+        #food-menu h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .food-item {
+            display: inline-block;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        .food-item img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .food-item h3 {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>Rohit Kumar Landing Page</h1>
+        <ul class="menu-items">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#food">Category</a></li>
+            <li><a href="#food-menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="showcase-area" id="showcase">
+        <h1 class="main-title" id="home">Eat Right Food</h1>
+        <p>Eat healthy, it is good for your health.</p>
+        <a href="#food-menu" class="btn">Explore Menu</a>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We've been serving delicious and healthy meals for over a decade. Our mission is to make every meal a joyful
+            experience with fresh ingredients and heartwarming recipes.</p>
+    </section>
+
+    <section id="food-menu">
+        <h2>Our Special Menu</h2>
+        <div class="food-item">
+            <img src="pizza.jpg" alt="Pizza">
+            <h3>Delicious Pizza</h3>
+        </div>
+        <div class="food-item">
+            <img src="burger.png" alt="Burger">
+            <h3>Cheesy Burger</h3>
+        </div>
+        <div class="food-item">
+            <img src="pasta.jpg" alt="Pasta">
+            <h3>Creamy Pasta</h3>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <p>Rohit Kumar Landing Page &copy; All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.querySelector(".navbar");
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 100) {
+                    navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+                } else {
+                    navbar.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                }
+            });
+
+            const buttons = document.querySelectorAll(".btn");
+            buttons.forEach((btn) => {
+                btn.addEventListener("mouseover", () => {
+                    btn.style.transform = "scale(1.1)";
+                    btn.style.transition = "transform 0.3s";
+                });
+                btn.addEventListener("mouseout", () => {
+                    btn.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
